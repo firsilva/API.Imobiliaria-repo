@@ -1,0 +1,11 @@
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\bin\Debug\net8.0\API.Imobiliaria.IoC.deps.json
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\bin\Debug\net8.0\API.Imobiliaria.IoC.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\bin\Debug\net8.0\API.Imobiliaria.IoC.pdb
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.AssemblyInfoInputs.cache
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.AssemblyInfo.cs
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.csproj.CoreCompileInputs.cache
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\refint\API.Imobiliaria.IoC.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\API.Imobiliaria.IoC.pdb
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.IoC\obj\Debug\net8.0\ref\API.Imobiliaria.IoC.dll

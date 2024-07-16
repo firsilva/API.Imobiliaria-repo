@@ -1,0 +1,11 @@
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\bin\Debug\net8.0\API.Imobiliaria.SharedKernel.deps.json
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\bin\Debug\net8.0\API.Imobiliaria.SharedKernel.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\bin\Debug\net8.0\API.Imobiliaria.SharedKernel.pdb
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.AssemblyInfoInputs.cache
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.AssemblyInfo.cs
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.csproj.CoreCompileInputs.cache
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\refint\API.Imobiliaria.SharedKernel.dll
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\API.Imobiliaria.SharedKernel.pdb
+C:\Users\firsilva\Desktop\Grupo Estudo\Projetos\API.Imobiliaria\API.Imobiliaria.SharedKernel\obj\Debug\net8.0\ref\API.Imobiliaria.SharedKernel.dll
