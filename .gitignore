@@ -141,3 +141,15 @@ node_modules/
 # ASP.NET
 sql/
 testdb/
+/src/API/API.Imobiliaria/obj/Debug/net8.0
+/src/API/API.Imobiliaria/obj
+/src/Core/API.Imobiliaria.SharedKernel/obj
+/src/Services/API.Imobiliaria.Aplicacao/obj
+/src/Services/API.Imobiliaria.Data/obj
+/src/Services/API.Imobiliaria.Dominio/obj
+/src/Services/API.Imobiliaria.Infraestructure/obj
+/src/Services/API.Imobiliaria.IoC/obj
+/src/Tests/API.Imobiliaria.Tests/obj
+/src/API/API.Imobiliaria/bin/Debug/net8.0
+/src/Services/API.Imobiliaria.Dominio/bin/Debug/net8.0
+/src/Core/API.Imobiliaria.SharedKernel/bin/Debug/net8.0
