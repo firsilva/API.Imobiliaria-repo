@@ -153,3 +153,7 @@ testdb/
 /src/API/API.Imobiliaria/bin/Debug/net8.0
 /src/Services/API.Imobiliaria.Dominio/bin/Debug/net8.0
 /src/Core/API.Imobiliaria.SharedKernel/bin/Debug/net8.0
+/src/Tests/API.Imobiliaria.Tests/bin/Debug/net8.0
+/src/Services/API.Imobiliaria.Infraestructure/bin/Debug/net8.0
+/src/Services/API.Imobiliaria.IoC/bin/Debug/net8.0
+/src/Services/API.Imobiliaria.IoC/bin/Debug/net8.0/API.Imobiliaria.IoC.deps.json

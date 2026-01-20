@@ -4,7 +4,7 @@ using API.Imobiliaria.Dominio.Entidades;
 
 namespace API.Imobiliaria.Data.Mapping
 {
-    public class ApartamentoMapping : IEntityTypeConfiguration<Apartamento>
+    public class SalaComercialMapping : IEntityTypeConfiguration<Apartamento>
     {
         public void Configure(EntityTypeBuilder<Apartamento> builder)
         {

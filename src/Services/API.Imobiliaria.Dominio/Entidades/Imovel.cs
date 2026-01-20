@@ -2,21 +2,36 @@
 
 namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Imovel : EntidadeBase
+    public class ImovelCorreto : EntidadeBase
     {
+        public Guid Id { get; set; }
+
         public string Titulo { get; set; }
         public string Descricao { get; set; }
-        public decimal Preco { get; set; }
-        public string Bairro { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
-        public string CEP { get; set; }
-        public decimal AreaTotal { get; set; }
-        public decimal AreaConstruida { get; set; }
-        public TipoImovelEnum TipoImovel { get; set; }  // Tipo de imóvel (Casa, Apartamento, etc.)
-        public StatusImovelEnum Status { get; set; }
 
-        // Relacionamento com imagens
-        public List<Imagem> Imagem { get; set; }
+        public decimal Preco { get; set; }
+        public decimal? ValorCondominio { get; set; }
+        public decimal? ValorIPTU { get; set; }
+
+        public double AreaTotal { get; set; }
+        public int? QtdQuartos { get; set; }
+        public int? QtdBanheiros { get; set; }
+        public int? VagasGaragem { get; set; }
+
+        public StatusImovel Status { get; set; }
+        public FinalidadeImovel Finalidade { get; set; }
+
+        public Guid TipoImovelId { get; set; }
+        public TipoImovel TipoImovel { get; set; }
+
+        public Guid EnderecoId { get; set; }
+        public Endereco Endereco { get; set; }
+
+        public Guid ProprietarioId { get; set; }
+        public Proprietario Proprietario { get; set; }
+
+        public ICollection<ImagemImovel> Imagens { get; set; }
+        public ICollection<ImovelCaracteristica> Caracteristicas { get; set; }
     }
+
 }

@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\API.Imobiliaria.SharedKernel\API.Imobiliaria.SharedKernel.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Token\" />
+    <ProjectReference Include="..\API.Imobiliaria.Data\API.Imobiliaria.Data.csproj" />
   </ItemGroup>
 
 </Project>
