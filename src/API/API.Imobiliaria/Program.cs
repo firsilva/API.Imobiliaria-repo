@@ -1,5 +1,9 @@
+using API.Imobiliaria.Aplicacao.Cliente;
 using API.Imobiliaria.Data.Context;
 using API.Imobiliaria.Data.Data;
+using API.Imobiliaria.Data.Repository;
+using API.Imobiliaria.Dominio.Entidades;
+using API.Imobiliaria.IoC;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Imobiliaria
@@ -9,6 +13,8 @@ namespace API.Imobiliaria
         public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("DefaultConnection"));
 
             //builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
             //{
@@ -33,6 +39,7 @@ namespace API.Imobiliaria
 
             var app = builder.Build();
 
+            //Aplicar as Migrations toda vez que rodar a primeira vez
             //using (var scope = app.Services.CreateScope())
             //{
             //    var context = scope.ServiceProvider.GetRequiredService<ImobiliariaContext>();

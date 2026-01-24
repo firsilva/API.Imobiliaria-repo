@@ -1,6 +1,6 @@
 ﻿namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Endereco
+    public class Endereco : EntidadeBase
     {
         public Guid Id { get; set; }
 

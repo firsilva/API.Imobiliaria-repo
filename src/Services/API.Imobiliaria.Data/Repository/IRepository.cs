@@ -1,9 +1,13 @@
-﻿namespace API.Imobiliaria.Data.Repository
+﻿using API.Imobiliaria.Dominio.Entidades;
+
+namespace API.Imobiliaria.Data.Repository
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> where TEntity : EntidadeBase
     {
-        Task<TEntity> ObterPorIdAsync(Guid id);
-        Task<IEnumerable<TEntity>> ObterPorListaIdAsync(List<Guid> id);
-        Task<IEnumerable<TEntity>> ObterTodosAsync();
+        Task<TEntity> GetByIdAsync(Guid id);
+        Task<IEnumerable<TEntity>> ListAllAsync();
+        Task AddAsync(TEntity entity);
+        Task UpdateAsync(TEntity entity);
+        Task DeleteAsync(TEntity entity);
     }
 }

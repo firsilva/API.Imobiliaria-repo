@@ -4,7 +4,7 @@ using API.Imobiliaria.Dominio.Entidades;
 
 namespace API.Imobiliaria.Data.Mapping
 {
-    public class ImagemMapping : IEntityTypeConfiguration<Imagem>
+    public class ImagemImovelMapping : BaseMapping<Imagem>
     {
         public void Configure(EntityTypeBuilder<Imagem> builder)
         {
@@ -13,7 +13,7 @@ namespace API.Imobiliaria.Data.Mapping
 
             //EntidadeImagem
             builder.Property(x => x.ImagemBase64).HasColumnType("TEXT").IsRequired();
-            builder.Property(x => x.IsCapa).HasColumnType("BOOL").IsRequired();
+            builder.Property(x => x.Capa).HasColumnType("BOOL").IsRequired();
             builder.Property(x => x.ImovelId).HasColumnType("uuid").IsRequired();
 
             //EntidadeBase
@@ -26,7 +26,6 @@ namespace API.Imobiliaria.Data.Mapping
                 .WithMany(a => a.Imagem)
                 .HasForeignKey(a => a.ImovelId)
                 .OnDelete(DeleteBehavior.Restrict);
-
         }
     }
 }

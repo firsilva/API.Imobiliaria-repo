@@ -2,7 +2,7 @@
 
 namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Proposta
+    public class Proposta : EntidadeBase
     {
         public Guid Id { get; set; }
 

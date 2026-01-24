@@ -1,14 +1,19 @@
 ﻿namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Cliente
+    public class Cliente : Pessoa
     {
-        public Guid Id { get; set; }
+        protected Cliente() { } // EF
 
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Telefone { get; set; }
+        public Cliente(string nome, string email, string telefone, string documento, Guid? usuarioId) : base(nome, email, telefone, documento)
+        {
+            UsuarioId = usuarioId;
+            Propostas = new List<Proposta>();
+        }
+
         public Guid? UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
+
+        public Endereco Endereco { get; set; }
 
         public ICollection<Proposta> Propostas { get; set; }
     }

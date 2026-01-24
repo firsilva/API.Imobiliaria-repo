@@ -10,7 +10,7 @@ namespace API.Imobiliaria.Data.Data
 {
     public static class UsuarioSeed
     {
-        public static async Task SeedAsync(ImobiliariaContext context)
+        public static async Task SeedAsync(ImobiliariaDbContext context)
         {
             //if (context.Usuarios.Any())
             //    return;

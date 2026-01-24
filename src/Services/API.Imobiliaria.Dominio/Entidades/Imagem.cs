@@ -2,14 +2,13 @@
 {
     public class Imagem : EntidadeBase
     {
-        // Relacionamento com o imóvel
-        public Guid ImovelId { get; set; }
-        public Imovel Imovel { get; set; }
+        public Guid Id { get; set; }
 
-        // Imagem em Base64
+        public string Url { get; set; }
+        public bool Capa { get; set; }
         public string ImagemBase64 { get; set; }
 
-        // Informações adicionais (opcional)
-        public bool IsCapa { get; set; }  // Se essa imagem é a capa principal do imóvel
+        public Guid ImovelId { get; set; }
+        public Imovel Imovel { get; set; }
     }
 }

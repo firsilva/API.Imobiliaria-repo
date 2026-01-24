@@ -1,8 +1,7 @@
 ﻿namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Caracteristica
+    public class Caracteristica : EntidadeBase
     {
-        public Guid Id { get; set; }
-        public string Nome { get; set; } //Piscina, Churrasqueira, etc
+        public string Nome { get; private set; } //Piscina, Churrasqueira, etc
     }
 }

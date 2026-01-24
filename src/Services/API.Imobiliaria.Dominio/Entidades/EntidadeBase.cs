@@ -2,27 +2,34 @@
 {
     public class EntidadeBase
     {
-        public Guid Id { get; private set; }
-        public bool Excluido { get; private set; }
-        public DateTime DataRegistro { get; private set; }
-        public DateTime? DataAtualizacaoRegistro { get; private set; }
-        public DateTime? DataExclusao { get; private set; }
+        public Guid Id { get; protected set; }
+        public bool Excluido { get; protected set; }
+        public DateTime DataRegistro { get; protected set; }
+        public DateTime? DataAtualizacaoRegistro { get; protected set; }
+        public DateTime? DataExclusao { get; protected set; }
 
         public EntidadeBase()
         {
             Id = Guid.NewGuid();
-            DataRegistro = DateTime.Now;
+        }
+
+        public void Criar()
+        {
+            DataRegistro = DateTime.UtcNow;
+            Excluido = false;
         }
 
         public void Desativar()
         {
+            if (Excluido) return;
+
             Excluido = true;
-            DataExclusao = DateTime.Now;
+            DataExclusao = DateTime.UtcNow;
         }
 
         public void AtualizarDataAtualizacao()
         {
-            DataAtualizacaoRegistro = DateTime.Now;
+            DataAtualizacaoRegistro = DateTime.UtcNow;
         }
     }
 }

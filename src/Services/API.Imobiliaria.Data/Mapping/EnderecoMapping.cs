@@ -4,18 +4,18 @@ using API.Imobiliaria.Dominio.Entidades;
 
 namespace API.Imobiliaria.Data.Mapping
 {
-    public class CasaMapping : IEntityTypeConfiguration<Casa>
+    public class EnderecoMapping : BaseMapping<Endereco>
     {
-        public void Configure(EntityTypeBuilder<Casa> builder)
+        public void Configure(EntityTypeBuilder<Endereco> builder)
         {
-            builder.ToTable("casa");
+            builder.ToTable("apartamento");
             builder.HasKey(x => x.Id);
 
-            //Entidade Casa
-            builder.Property(x => x.TemJardim).HasColumnType("BOOL").IsRequired();
+            //Entidade Apartamento
             builder.Property(x => x.TemPiscina).HasColumnType("BOOL").IsRequired();
             builder.Property(x => x.Andares).HasColumnType("INT").IsRequired();
             builder.Property(x => x.Quartos).HasColumnType("INT").IsRequired();
+            builder.Property(x => x.Andar).HasColumnType("INT").IsRequired();
 
             //Entidade Imovel
             builder.Property(x => x.Titulo).HasColumnType("VARCHAR(250)").IsRequired();

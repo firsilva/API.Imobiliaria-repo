@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace API.Imobiliaria.Dominio.Entidades
+﻿namespace API.Imobiliaria.Dominio.Entidades
 {
     public class Usuario : EntidadeBase
     {
@@ -12,11 +10,7 @@ namespace API.Imobiliaria.Dominio.Entidades
         public string SenhaHash { get; set; }
         public string SenhaSalt { get; set; }
 
-        public bool Ativo { get; set; }
-
         public Guid RoleId { get; set; }
         public Role Role { get; set; }
-
-        public DateTime CreatedAt { get; set; }
     }
 }

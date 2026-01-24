@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\API.Imobiliaria.SharedKernel\API.Imobiliaria.SharedKernel.csproj" />
     <ProjectReference Include="..\API.Imobiliaria.Data\API.Imobiliaria.Data.csproj" />
+    <ProjectReference Include="..\API.Imobiliaria.Dominio\API.Imobiliaria.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

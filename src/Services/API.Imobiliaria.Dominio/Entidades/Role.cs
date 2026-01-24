@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace API.Imobiliaria.Dominio.Entidades
+﻿namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Role
+    public class Role : EntidadeBase
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }

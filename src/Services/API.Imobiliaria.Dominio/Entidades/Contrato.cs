@@ -2,10 +2,8 @@
 
 namespace API.Imobiliaria.Dominio.Entidades
 {
-    public class Contrato
+    public class Contrato : EntidadeBase
     {
-        public Guid Id { get; set; }
-
         public Guid ImovelId { get; set; }
         public Imovel Imovel { get; set; }
 
@@ -19,6 +17,6 @@ namespace API.Imobiliaria.Dominio.Entidades
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }
 
-        public TipoContrato Tipo { get; set; } // Venda ou Aluguel
+        public Finalidade Finalidade { get; set; } // Venda ou Aluguel
     }
 }

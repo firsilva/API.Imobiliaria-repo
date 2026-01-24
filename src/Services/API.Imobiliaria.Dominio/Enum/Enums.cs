@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace API.Imobiliaria.Dominio.Enum
+﻿namespace API.Imobiliaria.Dominio.Enum
 {
     public enum StatusImovel
     {
@@ -14,7 +8,7 @@ namespace API.Imobiliaria.Dominio.Enum
         Alugado = 4
     }
 
-    public enum FinalidadeImovel
+    public enum Finalidade
     {
         Venda = 1,
         Aluguel = 2
@@ -26,11 +20,4 @@ namespace API.Imobiliaria.Dominio.Enum
         Aceita = 2,
         Recusada = 3
     }
-
-    public enum TipoContrato
-    {
-        Venda = 1,
-        Aluguel = 2
-    }
-
 }

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\API.Imobiliaria.Aplicacao\API.Imobiliaria.Aplicacao.csproj" />
+    <ProjectReference Include="..\API.Imobiliaria.Data\API.Imobiliaria.Data.csproj" />
+  </ItemGroup>
+
 </Project>
