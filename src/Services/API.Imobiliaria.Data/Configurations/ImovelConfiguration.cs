@@ -2,38 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using API.Imobiliaria.Dominio.Entidades;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public class ImovelMapping : BaseMapping<Imovel>
+    public class ImovelConfiguration : BaseEntityConfiguration<Imovel>
     {
         public void Configure(EntityTypeBuilder<Imovel> builder)
         {
-            builder.ToTable("imovel");
+            base.Configure(builder);
 
-            builder.HasKey(i => i.Id);
-
-            // ===== EntidadeBase =====
-            builder.Property(i => i.Id)
-                   .HasColumnName("id")
-                   .HasColumnType("uuid");
-
-            builder.Property(i => i.Excluido)
-                   .HasColumnName("excluido")
-                   .HasColumnType("bool")
-                   .HasDefaultValue(false);
-
-            builder.Property(i => i.DataRegistro)
-                   .HasColumnName("data_registro")
-                   .HasColumnType("timestamptz")
-                   .IsRequired();
-
-            builder.Property(i => i.DataAtualizacaoRegistro)
-                   .HasColumnName("data_atualizacao_registro")
-                   .HasColumnType("timestamptz");
-
-            builder.Property(i => i.DataExclusao)
-                   .HasColumnName("data_exclusao")
-                   .HasColumnType("timestamptz");
+            builder.ToTable("imoveis");
 
             // ===== Propriedades =====
             builder.Property(i => i.Titulo)

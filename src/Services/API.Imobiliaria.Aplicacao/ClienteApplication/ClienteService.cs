@@ -1,7 +1,7 @@
 ﻿using API.Imobiliaria.Data.Context;
 using API.Imobiliaria.Data.Repository;
 
-namespace API.Imobiliaria.Aplicacao.Cliente
+namespace API.Imobiliaria.Aplicacao.ClienteApplication
 {
     public class ClienteService : IClienteService
     {

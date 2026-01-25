@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using API.Imobiliaria.Dominio.Entidades;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public class EnderecoMapping : BaseMapping<Endereco>
+    public class EnderecoMapping : BaseEntityConfiguration<Endereco>
     {
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {

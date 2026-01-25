@@ -1,4 +1,4 @@
-﻿namespace API.Imobiliaria.Aplicacao.Cliente
+﻿namespace API.Imobiliaria.Aplicacao.ClienteApplication
 {
     public interface IClienteService
     {

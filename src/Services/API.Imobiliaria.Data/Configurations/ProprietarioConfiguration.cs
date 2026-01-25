@@ -2,16 +2,15 @@
 using Microsoft.EntityFrameworkCore;
 using API.Imobiliaria.Dominio.Entidades;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public class CorretorMapping : BaseMapping<Corretor>
+    public class ProprietarioConfiguration : BaseEntityConfiguration<Proprietario>
     {
-        public void Configure(EntityTypeBuilder<Corretor> builder)
+        public void Configure(EntityTypeBuilder<Proprietario> builder)
         {
-            builder.ToTable("corretor");
+            builder.ToTable("proprietario");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Creci).HasColumnType("NVARCHAR(12)").IsRequired();
             builder.Property(x => x.Nome).HasColumnType("NVARCHAR(500)").IsRequired();
             builder.Property(x => x.Email).HasColumnType("NVARCHAR(500)").IsRequired();
             builder.Property(x => x.Telefone).HasColumnType("NVARCHAR(15)").IsRequired();

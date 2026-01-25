@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using API.Imobiliaria.Dominio.Entidades;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public class ClienteMapping : BaseMapping<Cliente>
+    public class ClienteConfiguration : BaseEntityConfiguration<Cliente>
     {
         public void Configure(EntityTypeBuilder<Cliente> builder)
         {

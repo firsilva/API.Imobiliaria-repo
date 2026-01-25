@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using API.Imobiliaria.Dominio.Entidades;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public class ImagemImovelMapping : BaseMapping<Imagem>
+    public class ImagemImovelConfiguration : BaseEntityConfiguration<Imagem>
     {
         public void Configure(EntityTypeBuilder<Imagem> builder)
         {

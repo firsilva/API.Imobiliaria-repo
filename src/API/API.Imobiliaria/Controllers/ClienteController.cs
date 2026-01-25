@@ -1,17 +1,19 @@
-﻿using API.Imobiliaria.Aplicacao.Cliente;
+﻿using API.Imobiliaria.Aplicacao.ClienteApplication;
+using API.Imobiliaria.Aplicacao.ClienteApplication.Dto;
 using API.Imobiliaria.Dominio.Entidades;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Imobiliaria.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ClientesController : ControllerBase
+    public class ClienteController : ControllerBase
     {
         private readonly IClienteService _clienteService;
         private readonly IMapper _mapper;
 
-        public ClientesController(IClienteService clienteService, IMapper mapper)
+        public ClienteController(IClienteService clienteService, IMapper mapper)
         {
             _clienteService = clienteService;
             _mapper = mapper;

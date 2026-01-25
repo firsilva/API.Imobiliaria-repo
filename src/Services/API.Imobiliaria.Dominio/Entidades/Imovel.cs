@@ -3,18 +3,16 @@
 namespace API.Imobiliaria.Dominio.Entidades
 {
     public class Imovel : EntidadeBase
-    {
-        public Guid Id { get; set; }
-
-        public string Titulo { get; set; }
-        public string Descricao { get; set; }
+    {        
+        public required string Titulo { get; set; }
+        public required string Descricao { get; set; }
 
         public decimal Preco { get; set; }
         public decimal? ValorCondominio { get; set; }
         public decimal? ValorIPTU { get; set; }
 
         public double AreaTotal { get; set; }
-        public double AreaConstruida { get; set; }
+        public double? AreaConstruida { get; set; }
         public int? QtdQuartos { get; set; }
         public int? QtdBanheiros { get; set; }
         public int? VagasGaragem { get; set; }
@@ -31,8 +29,8 @@ namespace API.Imobiliaria.Dominio.Entidades
         public Guid ProprietarioId { get; set; }
         public Proprietario Proprietario { get; set; }
 
-        public ICollection<Imagem> Imagem { get; set; }
-        public ICollection<ImovelCaracteristica> Caracteristicas { get; set; }
+        public ICollection<Imagem> Imagens { get; set; } = new List<Imagem>();
+        public ICollection<ImovelCaracteristica> Caracteristicas { get; set; } = new List<ImovelCaracteristica>();
     }
 
 }

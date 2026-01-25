@@ -1,8 +1,10 @@
-﻿using API.Imobiliaria.Aplicacao.Cliente;
+﻿using API.Imobiliaria.Aplicacao.ClienteApplication;
+using API.Imobiliaria.Aplicacao.ClienteApplication.Mappings;
 using API.Imobiliaria.Data.Context;
 using API.Imobiliaria.Data.Repository;
 using API.Imobiliaria.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
+using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Imobiliaria.IoC
@@ -19,6 +21,8 @@ namespace API.Imobiliaria.IoC
             services.AddScoped<Repository<Cliente>>();
 
             services.AddScoped<IClienteService, ClienteService>();
+
+            services.AddAutoMapper(typeof(ClienteProfile).Assembly); // registra todos os profiles
 
             return services;
         }

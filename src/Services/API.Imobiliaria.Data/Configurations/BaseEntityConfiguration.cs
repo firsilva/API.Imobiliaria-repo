@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace API.Imobiliaria.Data.Mapping
+namespace API.Imobiliaria.Data.Configurations
 {
-    public abstract class BaseMapping<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : EntidadeBase
+    public abstract class BaseEntityConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : EntidadeBase
     {
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
