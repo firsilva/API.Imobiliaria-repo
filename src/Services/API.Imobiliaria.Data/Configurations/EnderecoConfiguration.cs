@@ -8,33 +8,21 @@ namespace API.Imobiliaria.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Endereco> builder)
         {
-            builder.ToTable("apartamento");
-            builder.HasKey(x => x.Id);
+            base.Configure(builder);
 
-            //Entidade Apartamento
-            builder.Property(x => x.TemPiscina).HasColumnType("BOOL").IsRequired();
-            builder.Property(x => x.Andares).HasColumnType("INT").IsRequired();
-            builder.Property(x => x.Quartos).HasColumnType("INT").IsRequired();
-            builder.Property(x => x.Andar).HasColumnType("INT").IsRequired();
+            builder.ToTable("enderecos");
 
-            //Entidade Imovel
-            builder.Property(x => x.Titulo).HasColumnType("VARCHAR(250)").IsRequired();
-            builder.Property(x => x.Descricao).HasColumnType("VARCHAR(500)").IsRequired();
-            builder.Property(x => x.Preco).HasColumnType("DECIMAL").IsRequired();
-            builder.Property(x => x.Bairro).HasColumnType("VARCHAR(500)").IsRequired();
-            builder.Property(x => x.Cidade).HasColumnType("VARCHAR(250)").IsRequired();
-            builder.Property(x => x.Estado).HasColumnType("VARCHAR(2)").IsRequired();
-            builder.Property(x => x.CEP).HasColumnType("VARCHAR(9)").IsRequired();
-            builder.Property(x => x.AreaTotal).HasColumnType("DECIMAL)").IsRequired();
-            builder.Property(x => x.AreaConstruida).HasColumnType("DECIMAL").IsRequired();
-            builder.Property(x => x.TipoImovel).HasColumnType("SMALLINT").IsRequired();
-            builder.Property(x => x.Status).HasColumnType("VARCHAR(100)").IsRequired();
+            builder.Property(e => e.Logradouro).HasColumnName("logradouro").HasMaxLength(500).IsRequired();
+            builder.Property(e => e.Numero).HasColumnName("numero").HasMaxLength(10).IsRequired();
+            builder.Property(e => e.Complemento).HasColumnName("complemento").HasMaxLength(10).IsRequired();
 
-            //EntidadeBase
-            builder.Property(x => x.DataRegistro).HasColumnType("TIMESTAMP").IsRequired();
-            builder.Property(x => x.DataAtualizacaoRegistro).HasColumnType("TIMESTAMP");
-            builder.Property(x => x.DataExclusao).HasColumnType("TIMESTAMP");
-            builder.Property(x => x.Excluido).HasColumnType("BOOL");
+            builder.Property(e => e.Bairro).HasColumnName("bairro").HasMaxLength(500).IsRequired();
+            builder.Property(e => e.Cidade).HasColumnName("cidade").HasMaxLength(250).IsRequired();
+            builder.Property(e => e.Estado).HasColumnName("estado").HasMaxLength(2).IsRequired();
+            builder.Property(e => e.CEP).HasColumnName("cep").HasMaxLength(9).IsRequired();
+
+            builder.Property(e => e.Latitude).HasColumnName("latitude");
+            builder.Property(e => e.Longitude).HasColumnName("longitude");
         }
     }
 }

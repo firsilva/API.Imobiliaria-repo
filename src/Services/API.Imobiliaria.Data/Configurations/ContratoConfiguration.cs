@@ -12,30 +12,6 @@ namespace API.Imobiliaria.Data.Configurations
 
             builder.ToTable("contratos");
 
-            builder.HasKey(c => c.Id);
-
-            // ===== EntidadeBase =====
-            builder.Property(c => c.Id)
-                   .HasColumnName("id")
-                   .HasColumnType("uuid");
-
-            builder.Property(c => c.Excluido)
-                   .HasColumnName("excluido")
-                   .HasDefaultValue(false);
-
-            builder.Property(c => c.DataRegistro)
-                   .HasColumnName("data_registro")
-                   .HasColumnType("timestamptz")
-                   .IsRequired();
-
-            builder.Property(c => c.DataAtualizacaoRegistro)
-                   .HasColumnName("data_atualizacao_registro")
-                   .HasColumnType("timestamptz");
-
-            builder.Property(c => c.DataExclusao)
-                   .HasColumnName("data_exclusao")
-                   .HasColumnType("timestamptz");
-
             // ===== Contrato =====
             builder.Property(c => c.ImovelId)
                    .HasColumnName("imovel_id")

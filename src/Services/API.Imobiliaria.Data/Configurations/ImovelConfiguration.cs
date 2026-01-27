@@ -17,7 +17,7 @@ namespace API.Imobiliaria.Data.Configurations
                    .HasColumnName("titulo")
                    .IsRequired()
                    .HasMaxLength(150);
-
+                
             builder.Property(i => i.Descricao)
                    .HasColumnName("descricao")
                    .HasMaxLength(1000);

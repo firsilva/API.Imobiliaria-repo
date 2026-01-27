@@ -8,9 +8,9 @@ namespace API.Imobiliaria.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Caracteristica> builder)
         {
-            builder.ToTable("caracteristica");
+            base.Configure(builder);
 
-            builder.HasKey(c => c.Id);
+            builder.ToTable("caracteristicas");
 
             // ===== Propriedades =====
             builder.Property(c => c.Nome)

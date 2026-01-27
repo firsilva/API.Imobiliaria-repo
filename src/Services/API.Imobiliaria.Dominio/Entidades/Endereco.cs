@@ -2,8 +2,6 @@
 {
     public class Endereco : EntidadeBase
     {
-        public Guid Id { get; set; }
-
         public string Logradouro { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }

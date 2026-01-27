@@ -8,22 +8,20 @@ namespace API.Imobiliaria.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Imagem> builder)
         {
-            builder.ToTable("imagem");
-            builder.HasKey(x => x.Id);
+            base.Configure(builder);
 
-            //EntidadeImagem
-            builder.Property(x => x.ImagemBase64).HasColumnType("TEXT").IsRequired();
-            builder.Property(x => x.Capa).HasColumnType("BOOL").IsRequired();
-            builder.Property(x => x.ImovelId).HasColumnType("uuid").IsRequired();
+            builder.ToTable("imagens");
 
-            //EntidadeBase
-            builder.Property(x => x.DataRegistro).HasColumnType("TIMESTAMP").IsRequired();
-            builder.Property(x => x.DataAtualizacaoRegistro).HasColumnType("TIMESTAMP");
-            builder.Property(x => x.DataExclusao).HasColumnType("TIMESTAMP");
-            builder.Property(x => x.Excluido).HasColumnType("BOOL");
+            builder.Property(x => x.Url).HasColumnName("url");
+            builder.Property(x => x.ImagemBase64).HasColumnName("imagem_base");
+            builder.Property(x => x.Capa).HasColumnName("capa").HasDefaultValue(false);
+
+            builder.Property(i => i.ImovelId)
+                   .HasColumnName("imovel_id")
+                   .HasColumnType("uuid");
 
             builder.HasOne(a => a.Imovel)
-                .WithMany(a => a.Imagem)
+                .WithMany()
                 .HasForeignKey(a => a.ImovelId)
                 .OnDelete(DeleteBehavior.Restrict);
         }

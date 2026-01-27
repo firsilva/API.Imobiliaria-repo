@@ -1,4 +1,4 @@
-using API.Imobiliaria.Aplicacao.Cliente;
+using API.Imobiliaria.Aplicacao.ClienteApplication;
 using API.Imobiliaria.Data.Context;
 using API.Imobiliaria.Data.Data;
 using API.Imobiliaria.Data.Repository;
@@ -14,7 +14,7 @@ namespace API.Imobiliaria
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("DefaultConnection"));
+            builder.Services.AddInfrastructure(builder.Configuration);
 
             //builder.Services.AddAuthentication("Bearer").AddJwtBearer(options =>
             //{

@@ -2,8 +2,6 @@
 {
     public class Imagem : EntidadeBase
     {
-        public Guid Id { get; set; }
-
         public string Url { get; set; }
         public bool Capa { get; set; }
         public string ImagemBase64 { get; set; }

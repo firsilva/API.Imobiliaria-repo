@@ -2,8 +2,7 @@
 {
     public class Proprietario : Pessoa
     {
-        public Guid Id { get; set; }
-
+        public Guid EnderecoId { get; set; }
         public Endereco Endereco { get; set; }
         public ICollection<Imovel> Imoveis { get; set; }
     }

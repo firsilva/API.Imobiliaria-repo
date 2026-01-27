@@ -4,8 +4,6 @@ namespace API.Imobiliaria.Dominio.Entidades
 {
     public class Proposta : EntidadeBase
     {
-        public Guid Id { get; set; }
-
         public Guid ImovelId { get; set; }
         public Imovel Imovel { get; set; }
 

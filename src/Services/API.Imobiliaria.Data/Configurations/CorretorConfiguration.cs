@@ -12,29 +12,23 @@ namespace API.Imobiliaria.Data.Configurations
 
             builder.ToTable("corretores");
 
-            builder.HasKey(c => c.Id);
+            // ===== Pessoa =====
+            builder.Property(c => c.Nome)
+                   .HasColumnName("nome")
+                   .IsRequired()
+                   .HasMaxLength(150);
 
-            // ===== EntidadeBase =====
-            builder.Property(c => c.Id)
-                   .HasColumnName("id")
-                   .HasColumnType("uuid");
+            builder.Property(c => c.Email)
+                   .HasColumnName("email")
+                   .HasMaxLength(150);
 
-            builder.Property(c => c.Excluido)
-                   .HasColumnName("excluido")
-                   .HasDefaultValue(false);
+            builder.Property(c => c.Telefone)
+                   .HasColumnName("telefone")
+                   .HasMaxLength(20);
 
-            builder.Property(c => c.DataRegistro)
-                   .HasColumnName("data_registro")
-                   .HasColumnType("timestamptz")
-                   .IsRequired();
-
-            builder.Property(c => c.DataAtualizacaoRegistro)
-                   .HasColumnName("data_atualizacao_registro")
-                   .HasColumnType("timestamptz");
-
-            builder.Property(c => c.DataExclusao)
-                   .HasColumnName("data_exclusao")
-                   .HasColumnType("timestamptz");
+            builder.Property(c => c.Documento)
+                   .HasColumnName("documento")
+                   .HasMaxLength(20);
 
             // ===== Corretor =====
             builder.Property(c => c.Creci)
@@ -61,8 +55,8 @@ namespace API.Imobiliaria.Data.Configurations
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(c => c.Contratos)
-                   .WithOne(ctt => ctt.Contrato)
-                   .HasForeignKey(ctt => ctt.ImovelId);
+                   .WithOne(ctt => ctt.Corretor)
+                   .HasForeignKey(ctt => ctt.CorretorId);
         }
     }
 }

@@ -6,23 +6,30 @@ using API.Imobiliaria.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace API.Imobiliaria.IoC
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
+            if (string.IsNullOrWhiteSpace(connectionString))
+                throw new InvalidOperationException(
+                    "Connection string 'DefaultConnection' não encontrada.");
+
             services.AddDbContext<ImobiliariaDbContext>(options =>
-                options.UseNpgsql(connectionString));
+                options.UseNpgsql(
+                    connectionString,
+                    x => x.MigrationsAssembly("API.Imobiliaria.Data")
+                ));
 
-            // 2️⃣ Registrar Repositórios genéricos
-            //services.AddScoped(typeof(Repository<>));
             services.AddScoped<Repository<Cliente>>();
-
             services.AddScoped<IClienteService, ClienteService>();
 
-            services.AddAutoMapper(typeof(ClienteProfile).Assembly); // registra todos os profiles
+            services.AddAutoMapper(typeof(ClienteProfile).Assembly);
 
             return services;
         }
