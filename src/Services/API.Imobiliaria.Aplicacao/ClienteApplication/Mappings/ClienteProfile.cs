@@ -9,13 +9,29 @@ namespace API.Imobiliaria.Aplicacao.ClienteApplication.Mappings
     {
         public ClienteProfile()
         {
-            // Mapear do domínio para DTO
+            // DTO → Entidade
             CreateMap<Cliente, ClienteReadDto>();
-            CreateMap<Endereco, EnderecoDto>();
 
-            // Mapear do DTO para domínio
-            CreateMap<ClienteCreateDto, Cliente>();
-            CreateMap<EnderecoDto, Endereco>();
+            CreateMap<ClienteCreateDto, Cliente>()
+                .ConstructUsing(dto =>
+                    new Cliente(
+                        dto.Nome,
+                        dto.Email,
+                        dto.Telefone,
+                        dto.Documento,
+                        null
+                    )
+                )
+                .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
+                .ForMember(dest => dest.Id, opt => opt.Ignore())
+                .ForMember(dest => dest.UsuarioId, opt => opt.Ignore())
+                .ForMember(dest => dest.Usuario, opt => opt.Ignore())
+                .ForMember(dest => dest.Propostas, opt => opt.Ignore())
+                .ForMember(dest => dest.Excluido, opt => opt.Ignore())
+                .ForMember(dest => dest.DataRegistro, opt => opt.Ignore())
+                .ForMember(dest => dest.DataAtualizacaoRegistro, opt => opt.Ignore())
+                .ForMember(dest => dest.DataExclusao, opt => opt.Ignore());
+
         }
     }
 }

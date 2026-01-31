@@ -10,6 +10,11 @@
             Propostas = new List<Proposta>();
         }
 
+        public void DefinirEndereco(Endereco endereco)
+        {
+            Endereco = endereco;
+        }
+
         public Guid? UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 

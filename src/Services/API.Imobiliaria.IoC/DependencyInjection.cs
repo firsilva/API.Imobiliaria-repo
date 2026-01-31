@@ -29,8 +29,6 @@ namespace API.Imobiliaria.IoC
             services.AddScoped<Repository<Cliente>>();
             services.AddScoped<IClienteService, ClienteService>();
 
-            services.AddAutoMapper(typeof(ClienteProfile).Assembly);
-
             return services;
         }
     }

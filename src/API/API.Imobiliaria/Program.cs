@@ -4,6 +4,7 @@ using API.Imobiliaria.Data.Data;
 using API.Imobiliaria.Data.Repository;
 using API.Imobiliaria.Dominio.Entidades;
 using API.Imobiliaria.IoC;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Imobiliaria
@@ -36,6 +37,8 @@ namespace API.Imobiliaria
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             var app = builder.Build();
 
             //Aplicar as Migrations toda vez que rodar a primeira vez
@@ -48,6 +51,11 @@ namespace API.Imobiliaria
             //    await UsuarioSeed.SeedAsync(context);
             //    await TipoImovelSeed.SeedAsync(context);
             //}
+
+            app.Services
+               .GetRequiredService<IMapper>()
+               .ConfigurationProvider
+               .AssertConfigurationIsValid();
 
             app.UseSwagger();
             app.UseSwaggerUI();
