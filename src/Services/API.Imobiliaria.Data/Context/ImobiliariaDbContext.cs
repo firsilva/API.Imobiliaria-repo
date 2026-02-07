@@ -1,5 +1,6 @@
 ﻿using API.Imobiliaria.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace API.Imobiliaria.Data.Context
 {
@@ -23,15 +24,30 @@ namespace API.Imobiliaria.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ImobiliariaDbContext).Assembly); 
-            
-            base.OnModelCreating(modelBuilder);            
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ImobiliariaDbContext).Assembly);
+
+            AplicarFiltroSoftDelete(modelBuilder);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
+        private static void AplicarFiltroSoftDelete(ModelBuilder modelBuilder)
+        {
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                if (typeof(EntidadeBase).IsAssignableFrom(entityType.ClrType))
+                {
+                    var method = typeof(ImobiliariaDbContext)
+                        .GetMethod(nameof(ConfigureSoftDeleteFilter), BindingFlags.NonPublic | BindingFlags.Static)
+                        ?.MakeGenericMethod(entityType.ClrType);
+
+                    method?.Invoke(null, new object[] { modelBuilder });
+                }
+            }
         }
 
         private static void ConfigureSoftDeleteFilter<TEntity>(ModelBuilder builder) where TEntity : EntidadeBase
-        {
-            builder.Entity<TEntity>().HasQueryFilter(e => !e.Excluido);
-        }
+            => builder.Entity<TEntity>().HasQueryFilter(e => !e.Excluido);
 
         public async Task<bool> CommitAsync()
         {
@@ -64,6 +80,9 @@ namespace API.Imobiliaria.Data.Context
                         break;
 
                     case EntityState.Modified:
+                        if (!entry.Properties.Any(p => p.IsModified))
+                            break;
+
                         entry.Entity.AtualizarDataAtualizacao();
                         break;
 

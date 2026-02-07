@@ -2,7 +2,7 @@
 
 namespace API.Imobiliaria.Aplicacao.ClienteApplication.Dto
 {
-    public class ClienteCreateDto
+    public class ClienteDto
     {
         public string Nome { get; set; }
         public string Email { get; set; }

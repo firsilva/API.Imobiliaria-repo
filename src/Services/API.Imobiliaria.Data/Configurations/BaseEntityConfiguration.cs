@@ -12,7 +12,8 @@ namespace API.Imobiliaria.Data.Configurations
 
             builder.Property(e => e.Id)
                    .HasColumnName("id")
-                   .HasColumnType("uuid");
+                   .HasColumnType("uuid")
+                   .ValueGeneratedNever();
 
             builder.Property(e => e.Excluido)
                    .HasColumnName("excluido")

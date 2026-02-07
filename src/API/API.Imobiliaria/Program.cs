@@ -58,7 +58,10 @@ namespace API.Imobiliaria
                .AssertConfigurationIsValid();
 
             app.UseSwagger();
-            app.UseSwaggerUI();
+            app.UseSwaggerUI(c =>
+            {
+                c.DefaultModelsExpandDepth(-1);
+            });
 
             app.UseHttpsRedirection();
 

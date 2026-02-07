@@ -1,7 +1,5 @@
 ﻿using API.Imobiliaria.Aplicacao.ClienteApplication;
 using API.Imobiliaria.Aplicacao.ClienteApplication.Dto;
-using API.Imobiliaria.Dominio.Entidades;
-using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Imobiliaria.Controllers
@@ -11,13 +9,9 @@ namespace API.Imobiliaria.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClienteService _clienteService;
-        private readonly IMapper _mapper;
 
-        public ClienteController(IClienteService clienteService, IMapper mapper)
-        {
-            _clienteService = clienteService;
-            _mapper = mapper;
-        }
+        public ClienteController(IClienteService clienteService)
+            => _clienteService = clienteService;
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
@@ -25,26 +19,35 @@ namespace API.Imobiliaria.Controllers
             var cliente = await _clienteService.ObterClientePorIdAsync(id);
             if (cliente == null) return NotFound();
 
-            var dto = _mapper.Map<ClienteReadDto>(cliente);
-            return Ok(dto);
+            return Ok(cliente);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var clientes = await _clienteService.ListarClientesAsync();
-            var dtoList = _mapper.Map<IEnumerable<ClienteReadDto>>(clientes);
-            return Ok(dtoList);
+            var clientes = await _clienteService.ListarClientesAsync();            
+            return Ok(clientes);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] ClienteCreateDto dto)
+        public async Task<IActionResult> Post([FromBody] ClienteDto dto)
         {
-            var cliente = _mapper.Map<Cliente>(dto);
-            await _clienteService.AdicionarClienteAsync(cliente);
+            var resultDto = await _clienteService.AdicionarClienteAsync(dto);
+            return Created(string.Empty, resultDto);
+        }
 
-            var resultDto = _mapper.Map<ClienteReadDto>(cliente);
-            return CreatedAtAction(nameof(Get), new { id = cliente.Id }, resultDto);
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] ClienteDto dto)
+        {
+            await _clienteService.AtualizarClienteAsync(dto);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _clienteService.RemoverClienteAsync(id);
+            return Ok();
         }
     }
 }

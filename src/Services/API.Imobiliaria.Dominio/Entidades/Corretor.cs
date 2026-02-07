@@ -3,7 +3,7 @@
     public class Corretor : Pessoa
     {
         public string Creci { get; set; }
-        public Guid UsuarioId { get; set; }
+        public Guid? UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
         public Guid EnderecoId { get; set; }
         public Endereco Endereco { get; set; }

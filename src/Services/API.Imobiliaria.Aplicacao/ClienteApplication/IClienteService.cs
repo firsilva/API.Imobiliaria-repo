@@ -1,11 +1,13 @@
-﻿namespace API.Imobiliaria.Aplicacao.ClienteApplication
+﻿using API.Imobiliaria.Aplicacao.ClienteApplication.Dto;
+
+namespace API.Imobiliaria.Aplicacao.ClienteApplication
 {
     public interface IClienteService
     {
-        Task<Dominio.Entidades.Cliente> ObterClientePorIdAsync(Guid id);
-        Task<IEnumerable<Dominio.Entidades.Cliente>> ListarClientesAsync();
-        Task AdicionarClienteAsync(Dominio.Entidades.Cliente cliente);
-        Task AtualizarClienteAsync(Dominio.Entidades.Cliente cliente);
-        Task RemoverClienteAsync(Dominio.Entidades.Cliente cliente);
+        Task<ClienteDto> ObterClientePorIdAsync(Guid id);
+        Task<IEnumerable<ClienteDto>> ListarClientesAsync();
+        Task<ClienteDto> AdicionarClienteAsync(ClienteDto cliente);
+        Task AtualizarClienteAsync(ClienteDto cliente);
+        Task RemoverClienteAsync(Guid id);
     }
 }

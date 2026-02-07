@@ -24,7 +24,7 @@ namespace API.Imobiliaria.IoC
                 options.UseNpgsql(
                     connectionString,
                     x => x.MigrationsAssembly("API.Imobiliaria.Data")
-                ));
+                ).UseSnakeCaseNamingConvention());
 
             services.AddScoped<Repository<Cliente>>();
             services.AddScoped<IClienteService, ClienteService>();

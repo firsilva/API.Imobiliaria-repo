@@ -4,31 +4,11 @@ using API.Imobiliaria.Dominio.Entidades;
 
 namespace API.Imobiliaria.Data.Configurations
 {
-    public class ClienteConfiguration : BaseEntityConfiguration<Cliente>
+    public class ClienteConfiguration : PessoaConfiguration<Cliente>
     {
-        public void Configure(EntityTypeBuilder<Cliente> builder)
+        public override void Configure(EntityTypeBuilder<Cliente> builder)
         {
             base.Configure(builder);
-
-            builder.ToTable("clientes");
-
-            // ===== Pessoa =====
-            builder.Property(c => c.Nome)
-                   .HasColumnName("nome")
-                   .IsRequired()
-                   .HasMaxLength(150);
-
-            builder.Property(c => c.Email)
-                   .HasColumnName("email")
-                   .HasMaxLength(150);
-
-            builder.Property(c => c.Telefone)
-                   .HasColumnName("telefone")
-                   .HasMaxLength(20);
-
-            builder.Property(c => c.Documento)
-                   .HasColumnName("documento")
-                   .HasMaxLength(20);
 
             // ===== Cliente =====
             builder.Property(c => c.UsuarioId)
@@ -40,14 +20,27 @@ namespace API.Imobiliaria.Data.Configurations
                    .HasForeignKey(c => c.UsuarioId)
                    .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Property(c => c.EnderecoId)
+                   .HasColumnName("endereco_id")
+                   .HasColumnType("uuid");
+
             builder.HasOne(c => c.Endereco)
                    .WithOne()
-                   .HasForeignKey<Cliente>("endereco_id")
+                   .HasForeignKey<Cliente>(c => c.EnderecoId)
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasMany(c => c.Propostas)
                    .WithOne(p => p.Cliente)
                    .HasForeignKey(p => p.ClienteId);
+
+            // ===== Index =====
+            builder.HasIndex(c => c.Email)
+                   .IsUnique()
+                   .HasFilter("\"excluido\" = false");
+
+            builder.HasIndex(c => c.Documento)
+                   .IsUnique()
+                   .HasFilter("\"excluido\" = false");
         }
     }
 }

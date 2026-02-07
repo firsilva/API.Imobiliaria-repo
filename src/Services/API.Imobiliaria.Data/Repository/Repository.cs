@@ -1,6 +1,7 @@
 ﻿using API.Imobiliaria.Data.Context;
 using API.Imobiliaria.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace API.Imobiliaria.Data.Repository
 {
@@ -21,6 +22,16 @@ namespace API.Imobiliaria.Data.Repository
         public async Task<IEnumerable<TEntity>> ListAllAsync() =>
             await _dbSet.ToListAsync();
 
+        public async Task<IEnumerable<TEntity>> ListAsync(params Expression<Func<TEntity, object>>[] includes)
+        {
+            IQueryable<TEntity> query = _dbSet;
+
+            foreach (var include in includes)
+                query = query.Include(include);
+
+            return await query.ToListAsync();
+        }
+
         public async Task AddAsync(TEntity entity) =>
             await _dbSet.AddAsync(entity);
 
@@ -36,57 +47,4 @@ namespace API.Imobiliaria.Data.Repository
             return Task.CompletedTask;
         }
     }
-
-    //public class Repository <T> : IRepository<T> where T : EntidadeBase, new()
-    //{
-    //    protected readonly ImobiliariaDbContext Db;
-    //    protected readonly DbSet<T> DbSet;
-    //    protected Repository(MedicalHealthContext db)
-    //    {
-    //        Db = db;
-    //        DbSet = db.Set<T>();
-    //    }
-    //    public async Task<T> ObterPorIdAsync(Guid id)
-    //    {
-    //        return await DbSet.FirstOrDefaultAsync(x => x.Id == id && x.Excluido == false);
-    //    }
-
-    //    public async Task<IEnumerable<T>> ObterPorListaIdAsync(List<Guid> id)
-    //    {
-    //        return await DbSet.Where(x => id.Contains(x.Id) && x.Excluido == false).ToListAsync();
-    //    }
-
-    //    public async Task<IEnumerable<T>> ObterTodosAsync()
-    //    {
-    //        return await DbSet.Where(x => x.Excluido == false).ToListAsync();
-    //    }
-
-    //    public async Task AdicionarAsync(T entidade)
-    //    {
-    //        DbSet.Add(entidade);
-    //        await SalvarAsync();
-    //    }
-
-    //    public async Task AtualizarAsync(T entidade)
-    //    {
-    //        DbSet.Update(entidade);
-    //        await SalvarAsync();
-    //    }
-
-    //    public async void Dispose()
-    //    {
-    //        Db?.Dispose();
-    //    }
-
-    //    public async Task RemoverAsync(T entidade)
-    //    {
-    //        DbSet.Update(entidade);
-    //        await SalvarAsync();
-    //    }
-
-    //    public async Task<bool> SalvarAsync()
-    //    {
-    //        return await Db.CommitAsync();
-    //    }
-    //}
 }
