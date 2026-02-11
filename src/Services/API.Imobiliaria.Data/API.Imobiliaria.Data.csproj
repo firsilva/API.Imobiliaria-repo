@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\API.Imobiliaria.Dominio\API.Imobiliaria.Dominio.csproj" />
+    <ProjectReference Include="..\API.Imobiliaria.Dominio\API.Imobiliaria.Domain.csproj" />
   </ItemGroup>
 
 </Project>

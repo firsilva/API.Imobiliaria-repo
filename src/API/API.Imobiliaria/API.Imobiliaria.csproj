@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\API.Imobiliaria.Aplicacao\API.Imobiliaria.Aplicacao.csproj" />
+    <ProjectReference Include="..\..\Services\API.Imobiliaria.Aplicacao\API.Imobiliaria.Application.csproj" />
     <ProjectReference Include="..\..\Services\API.Imobiliaria.Data\API.Imobiliaria.Data.csproj" />
     <ProjectReference Include="..\..\Services\API.Imobiliaria.IoC\API.Imobiliaria.IoC.csproj" />
   </ItemGroup>

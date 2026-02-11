@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.SharedKernel", "..\..\Core\API.Imobiliaria.SharedKernel\API.Imobiliaria.SharedKernel.csproj", "{B789CECE-2648-40FC-A280-85017A1D745D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Aplicacao", "..\..\Services\API.Imobiliaria.Aplicacao\API.Imobiliaria.Aplicacao.csproj", "{CF07D575-8E5C-4D84-B2CC-0574228FD6AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Application", "..\..\Services\API.Imobiliaria.Aplicacao\API.Imobiliaria.Application.csproj", "{CF07D575-8E5C-4D84-B2CC-0574228FD6AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Data", "..\..\Services\API.Imobiliaria.Data\API.Imobiliaria.Data.csproj", "{9B195419-6752-4C34-892C-A15B9F7F8B0B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Dominio", "..\..\Services\API.Imobiliaria.Dominio\API.Imobiliaria.Dominio.csproj", "{51D6D002-CF49-49B2-B844-C8FFAF802973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Domain", "..\..\Services\API.Imobiliaria.Dominio\API.Imobiliaria.Domain.csproj", "{51D6D002-CF49-49B2-B844-C8FFAF802973}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Imobiliaria.Infraestructure", "..\..\Services\API.Imobiliaria.Infraestructure\API.Imobiliaria.Infraestructure.csproj", "{10B33FC5-1341-48FF-9FB2-A0EC1BD99A9B}"
 EndProject

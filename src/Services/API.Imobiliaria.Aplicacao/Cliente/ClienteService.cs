@@ -7,7 +7,7 @@ namespace API.Imobiliaria.Aplicacao.ClienteApplication
 {
     public class ClienteService : IClienteService
     {
-        private readonly Repository<Dominio.Entidades.Cliente> _clienteRepository;
+        private readonly IRepository<Dominio.Entidades.Cliente> _clienteRepository;
         private readonly ImobiliariaDbContext _context;
         private readonly IMapper _mapper;
 
@@ -37,7 +37,6 @@ namespace API.Imobiliaria.Aplicacao.ClienteApplication
         public async Task AtualizarClienteAsync(ClienteDto cliente)
         {
             //var cliente = await _clienteRepository.GetByIdAsync(cliente.Email);
-
             //await _clienteRepository.UpdateAsync(cliente);
             await _context.SaveChangesAsync();
         }
